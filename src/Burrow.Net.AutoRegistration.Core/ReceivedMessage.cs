@@ -8,8 +8,6 @@ namespace Burrow.Net.AutoRegistration.Core {
 
     class ReceivedMessage<T> : IReceivedMessage<T> {
 
-        //IBrokeredMessage brokeredMessage;
-
         ulong messageId; 
         T message;
         IDictionary<string, object> metadata;
@@ -23,12 +21,6 @@ namespace Burrow.Net.AutoRegistration.Core {
             this.messageId = messageId;
             this.metadata = metadata;
         }
-
-        //public IBrokeredMessage BrokeredMessage {
-        //    get {
-        //        return brokeredMessage;
-        //    }
-        //}
 
         public ulong MessageId {
             get {

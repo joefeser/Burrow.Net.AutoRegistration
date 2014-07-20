@@ -56,14 +56,6 @@ namespace Burrow.Net.AutoRegistration.Core {
 
             gt.GetProperty("SubscriptionName").SetValue(subscriptionOption, EndpointData.DeclaredType.FullName);
 
-            //var property = gt.GetProperty("MessageHandler");
-
-            //var objParm = Expression.Parameter(property.DeclaringType, "o");
-            //var valueParm = Expression.Parameter(property.PropertyType, "value");
-            //Type delegateType = typeof(Action<,>).MakeGenericType(property.DeclaringType, property.PropertyType);
-            //var lambda = Expression.Lambda(delegateType, Expression.Assign(Expression.Property(objParm, property.Name), valueParm), objParm, valueParm);
-            //var d = lambda.Compile();
-
             if (EndpointData.AttributeData != null) {
                 if (EndpointData.AttributeData.MaxConcurrentCalls > 0) {
                     gt.GetProperty("BatchSize").SetValue(subscriptionOption, (UInt16)EndpointData.AttributeData.MaxConcurrentCalls);

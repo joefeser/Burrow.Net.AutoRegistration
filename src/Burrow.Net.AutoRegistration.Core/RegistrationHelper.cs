@@ -13,7 +13,8 @@ namespace Burrow.Net.AutoRegistration.Core {
     public static class RegistrationHelper {
 
         static object lockObject = new object();
-        //List<AzureReceiverHelper> mappings = new List<AzureReceiverHelper>();
+
+        //TODO log the subscriptions
 
         public static void RegisterAssembly(Assembly assembly) {
             foreach (var type in assembly.GetTypes()) {

@@ -11,12 +11,6 @@ namespace Burrow.Net.AutoRegistration.Core {
         internal static IRouteFinder routeFinder;
         internal static ISerializer serializer;
 
-        //public static ITunnel Tunnel {
-        //    get {
-        //        return tunnel;
-        //    }
-        //}
-
         public static void Publish<T>(T message) {
             tunnel.Publish(message, typeof(T).FullName.Replace(".", "_"));
         }

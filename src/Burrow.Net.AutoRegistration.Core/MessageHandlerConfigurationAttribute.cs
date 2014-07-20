@@ -29,7 +29,7 @@ namespace Burrow.Net.AutoRegistration.Core {
         /// Create a new instance of the Attribute with the default settings.
         /// </summary>
         public MessageHandlerConfigurationAttribute() {
-            //EnableBatchedOperations = true;
+
         }
 
         /// <summary>
@@ -45,22 +45,6 @@ namespace Burrow.Net.AutoRegistration.Core {
             }
         }
 
-        ///// <summary>
-        ///// Send the letter to the default dead letter queue after the max retries.
-        ///// </summary>
-        //public bool DeadLetterAfterMaxRetries {
-        //    get;
-        //    set;
-        //}
-
-        ///// <summary>
-        ///// Gets or sets a value that indicates whether the batched operations are enabled.
-        ///// </summary>
-        //public bool EnableBatchedOperations {
-        //    get;
-        //    set;
-        //}
-
         /// <summary>
         /// Gets or sets the value that indicates if a subscription has dead letter support when a message expires.
         /// </summary>
@@ -68,20 +52,6 @@ namespace Burrow.Net.AutoRegistration.Core {
             get;
             set;
         }
-
-        ///// <summary>
-        ///// Gets or sets the lock duration time span for the subscription. (in seconds)
-        ///// </summary>
-        ///// <remarks>30 seconds to 5 minutes??? Looking for more info.</remarks>
-        //public int LockDuration {
-        //    get {
-        //        return lockDuration;
-        //    }
-        //    set {
-        //        lockDuration = value;
-        //        lockDurationSet = true;
-        //    }
-        //}
 
         /// <summary>
         /// Gets or sets the maximum number of concurrent calls to the callback the message pump should initiate.
@@ -95,20 +65,6 @@ namespace Burrow.Net.AutoRegistration.Core {
                 maxConcurrentCalls = value;
             }
         }
-
-        ///// <summary>
-        ///// Gets or sets the number of maximum calls to your handler.
-        ///// </summary>
-        //public int MaxRetries {
-        //    get {
-        //        return maxDeliveryCount;
-        //    }
-        //    set {
-        //        //Guard.ArgumentNotZeroOrNegativeValue(value, "value");
-        //        maxDeliveryCount = value;
-        //        maxDeliveryCountSet = true;
-        //    }
-        //}
 
         /// <summary>
         /// If we threw an error, pause the provided milliseconds before calling the handler again
@@ -137,23 +93,6 @@ namespace Burrow.Net.AutoRegistration.Core {
                 prefetchCountSet = true;
             }
         }
-
-        ///// <summary>
-        ///// Enumerates the values for the receive mode.
-        ///// </summary>
-        ///// <remarks>
-        ///// PeekLock
-        ///// Specifies the PeekLock receive mode.
-        ///// This mode receives the message but keeps it peek-locked until the receiver abandons the message.
-        ///// 
-        ///// ReceiveAndDelete
-        ///// Specifies the ReceiveAndDelete receive mode.
-        /////This mode deletes the message after it is received.
-        ///// </remarks>
-        //public ReceiveMode ReceiveMode {
-        //    get;
-        //    set;
-        //}
 
         /// <summary>
         /// Is the message handler a singleton or instance member?

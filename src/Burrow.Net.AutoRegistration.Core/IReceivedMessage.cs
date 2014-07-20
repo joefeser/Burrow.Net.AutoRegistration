@@ -18,12 +18,12 @@ namespace Burrow.Net.AutoRegistration.Core {
         T Message {
             get;
         }
-        //TODO see if we can pass metadata on a message.
-        ///// <summary>
-        ///// The metadata passed with the message from the user.
-        ///// </summary>
-        //IDictionary<string, object> Metadata {
-        //    get;
-        //}
+
+        /// <summary>
+        /// The metadata passed with the message from the user.
+        /// </summary>
+        IDictionary<string, object> Metadata {
+            get;
+        }
     }
 }
