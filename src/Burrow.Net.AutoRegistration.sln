@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Burrow.Net.AutoRegistration.Core", "Burrow.Net.AutoRegistration.Core\Burrow.Net.AutoRegistration.Core.csproj", "{B315C323-8E35-48D9-8887-13DF428E1CCD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsole", "..\TestConsole\TestConsole.csproj", "{E08006E5-AF17-4C68-98D0-1002F726E4C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{B315C323-8E35-48D9-8887-13DF428E1CCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B315C323-8E35-48D9-8887-13DF428E1CCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B315C323-8E35-48D9-8887-13DF428E1CCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E08006E5-AF17-4C68-98D0-1002F726E4C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E08006E5-AF17-4C68-98D0-1002F726E4C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E08006E5-AF17-4C68-98D0-1002F726E4C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E08006E5-AF17-4C68-98D0-1002F726E4C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

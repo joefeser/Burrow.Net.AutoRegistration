@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B315C323-8E35-48D9-8887-13DF428E1CCD}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{E08006E5-AF17-4C68-98D0-1002F726E4C9}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Burrow.Net.AutoRegistration.Core</RootNamespace>
-    <AssemblyName>Burrow.Net.AutoRegistration.Core</AssemblyName>
+    <RootNamespace>TestConsole</RootNamespace>
+    <AssemblyName>TestConsole</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -31,19 +33,18 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Burrow">
-      <HintPath>..\packages\Burrow.NET.1.0.28\lib\net40\Burrow.dll</HintPath>
+      <HintPath>..\src\packages\Burrow.NET.1.0.28\lib\net40\Burrow.dll</HintPath>
     </Reference>
     <Reference Include="Burrow.Extras">
-      <HintPath>..\packages\Burrow.Extras.1.0.28\lib\net40\Burrow.Extras.dll</HintPath>
+      <HintPath>..\src\packages\Burrow.Extras.1.0.28\lib\net40\Burrow.Extras.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\src\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="RabbitMQ.Client">
-      <HintPath>..\packages\RabbitMQ.Client.3.3.2\lib\net30\RabbitMQ.Client.dll</HintPath>
+      <HintPath>..\src\packages\RabbitMQ.Client.3.3.2\lib\net30\RabbitMQ.Client.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -52,19 +53,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HandlerEnpointData.cs" />
-    <Compile Include="IHandleMessages.cs" />
-    <Compile Include="IReceivedMessage.cs" />
-    <Compile Include="MessageHandlerConfigurationAttribute.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReceivedMessage.cs" />
-    <Compile Include="ReflectionHelper.cs" />
-    <Compile Include="RegistrationHelper.cs" />
-    <Compile Include="RegistrationRunner.cs" />
-    <Compile Include="Setup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\src\Burrow.Net.AutoRegistration.Core\Burrow.Net.AutoRegistration.Core.csproj">
+      <Project>{b315c323-8e35-48d9-8887-13df428e1ccd}</Project>
+      <Name>Burrow.Net.AutoRegistration.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
