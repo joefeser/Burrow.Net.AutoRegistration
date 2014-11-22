@@ -10,7 +10,7 @@ namespace TestConsole {
     class Program {
         static void Main(string[] args) {
 
-            Setup.SetRouteFinder(new TestRouteFinder());
+            Setup.SetExchange("Dropshipping");
             Setup.SetSerializer(new Burrow.Extras.JsonSerializer());
             Setup.Configure();
             RegistrationHelper.RegisterType(typeof(TestReceiver));
@@ -42,29 +42,13 @@ namespace TestConsole {
             Console.WriteLine("Received:" + message.Message.TestProperty);
         }
     }
+
     public class Test {
 
         public Test() {
 
         }
-
+    
         public int TestProperty { get; set; }
-
-    }
-
-    public class TestRouteFinder : IRouteFinder {
-        public string FindExchangeName<T>() {
-            return "zzz.DropShipper";
-        }
-
-        public string FindRoutingKey<T>() {
-            return typeof(T).FullName.Replace(".", "_");
-        }
-
-        public string FindQueueName<T>(string subscriptionName) {
-            return string.IsNullOrEmpty(subscriptionName)
-                ? string.Format("zzz.DropShipper.{0}", typeof(T).FullName)
-                : string.Format("zzz.DropShipper.{0}.{1}", subscriptionName, typeof(T).Name);
-        }
     }
 }

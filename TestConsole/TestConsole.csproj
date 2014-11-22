@@ -32,17 +32,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Burrow">
-      <HintPath>..\src\packages\Burrow.NET.1.0.28\lib\net40\Burrow.dll</HintPath>
+    <Reference Include="Burrow, Version=1.0.29.0, Culture=neutral, PublicKeyToken=852733f6fa7b863c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\src\packages\Burrow.NET.1.0.29\lib\net40\Burrow.dll</HintPath>
     </Reference>
-    <Reference Include="Burrow.Extras">
-      <HintPath>..\src\packages\Burrow.Extras.1.0.28\lib\net40\Burrow.Extras.dll</HintPath>
+    <Reference Include="Burrow.Extras, Version=1.0.29.0, Culture=neutral, PublicKeyToken=852733f6fa7b863c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\src\packages\Burrow.Extras.1.0.29\lib\net40\Burrow.Extras.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\src\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\src\packages\Newtonsoft.Json.6.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="RabbitMQ.Client">
-      <HintPath>..\src\packages\RabbitMQ.Client.3.3.2\lib\net30\RabbitMQ.Client.dll</HintPath>
+    <Reference Include="RabbitMQ.Client, Version=3.4.0.0, Culture=neutral, PublicKeyToken=89e7d7c5feba84ce, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\src\packages\RabbitMQ.Client.3.4.0\lib\net35\RabbitMQ.Client.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

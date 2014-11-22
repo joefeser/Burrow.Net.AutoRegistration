@@ -40,15 +40,9 @@ namespace Burrow.Net.AutoRegistration.Core {
             foreach (var foundInterface in interfaces) {
 
                 var implementedMessageType = foundInterface.GetGenericArguments()[0];
-
-                // Get the type contained in the name string
-                Type reflectedType = typeof(Burrow.Global).Assembly.GetType("Burrow.Internal.DefaultRouteFinder", true);
-
-                var routeFinder = Setup.routeFinder ?? Activator.CreateInstance(reflectedType) as IRouteFinder;
-
+                var routeFinder = new AutoRouteFinder(Setup.exchangeName);
                 var methodInfo = typeof(IRouteFinder).GetMethod("FindRoutingKey");
                 var genericMethodInfo = methodInfo.MakeGenericMethod(new Type[] { implementedMessageType });
-
                 var fullName = (string)genericMethodInfo.Invoke(routeFinder, null);
 
                 var info = new HandlerEnpointData() {
@@ -100,9 +94,6 @@ namespace Burrow.Net.AutoRegistration.Core {
                 var genericMethodInfo = methodInfo.MakeGenericMethod(new Type[] { data.MessageType });
 
                 genericMethodInfo.Invoke(setup, new object[] { routeData });
-
-                //Total hack since the call is async.
-                //System.Threading.Thread.Sleep(5000);
 
             } //lock end
 
