@@ -28,7 +28,7 @@ namespace Burrow.Net.AutoRegistration.Core {
                 throw new Exception("Tunnel is already initialized");
             }
             tunnel = RabbitTunnel.Factory.Create();
-            tunnel.SetRouteFinder(new AutoRouteFinder(exchangeName ));
+            tunnel.SetRouteFinder(new AutoRouteFinder(exchangeName));
             if (serializer != null) {
                 tunnel.SetSerializer(serializer);
             }

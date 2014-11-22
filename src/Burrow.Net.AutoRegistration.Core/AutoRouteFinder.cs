@@ -27,7 +27,7 @@ namespace Burrow.Net.AutoRegistration.Core {
         public string FindQueueName<T>(string subscriptionName) {
             return string.IsNullOrEmpty(subscriptionName)
                 ? string.Format(Exchange + ".{0}", typeof(T).FullName)
-                : string.Format(Exchange + ".{0}.{1}", subscriptionName, typeof(T).Name);
+                : string.Format(Exchange + ".{0}.{1}", typeof(T).Name, subscriptionName);
         }
     }
 }
