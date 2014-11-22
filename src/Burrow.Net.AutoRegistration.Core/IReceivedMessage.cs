@@ -19,6 +19,11 @@ namespace Burrow.Net.AutoRegistration.Core {
             get;
         }
 
+        //The message Id
+        ulong MessageId {
+            get;
+        }
+
         /// <summary>
         /// The metadata passed with the message from the user.
         /// </summary>
