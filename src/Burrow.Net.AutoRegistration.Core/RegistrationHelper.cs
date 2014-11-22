@@ -69,12 +69,6 @@ namespace Burrow.Net.AutoRegistration.Core {
 
                 var setup = new RabbitSetup(ConfigurationManager.ConnectionStrings["RabbitMQ"].ConnectionString);
 
-                var gt = typeof(RegistrationRunner<>).MakeGenericType(data.MessageType);
-                var rr = Activator.CreateInstance(gt, data);
-
-                var configMethod = rr.GetType().GetMethod("Configure");
-                configMethod.Invoke(rr, null);
-
                 var routeData = new RouteSetupData() {
                     ExchangeSetupData = new ExchangeSetupData() {
                         AutoDelete = false,
@@ -94,6 +88,12 @@ namespace Burrow.Net.AutoRegistration.Core {
                 var genericMethodInfo = methodInfo.MakeGenericMethod(new Type[] { data.MessageType });
 
                 genericMethodInfo.Invoke(setup, new object[] { routeData });
+
+                var gt = typeof(RegistrationRunner<>).MakeGenericType(data.MessageType);
+                var rr = Activator.CreateInstance(gt, data);
+
+                var configMethod = rr.GetType().GetMethod("Configure");
+                configMethod.Invoke(rr, null);
 
             } //lock end
 

@@ -8,8 +8,6 @@ namespace Burrow.Net.AutoRegistration.Core {
 
     internal class AutoRouteFinder : IRouteFinder {
 
-        public Type Type { get; private set; }
-
         public string Exchange { get; private set; }
 
         public AutoRouteFinder(string exchange) {
@@ -27,7 +25,7 @@ namespace Burrow.Net.AutoRegistration.Core {
         public string FindQueueName<T>(string subscriptionName) {
             return string.IsNullOrEmpty(subscriptionName)
                 ? string.Format(Exchange + ".{0}", typeof(T).FullName)
-                : string.Format(Exchange + ".{0}.{1}", typeof(T).Name, subscriptionName);
+                : string.Format(Exchange + ".{0}.{1}", typeof(T).FullName, subscriptionName);
         }
     }
 }
