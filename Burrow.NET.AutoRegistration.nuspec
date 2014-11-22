@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Burrow.NET.AutoRegistration</id>
+    <title>Burrow.NET Wrapper using the NServiceBus IHandleMessages&lt;T&gt; Pattern</title>
+    <version>0.0.1.0</version>
+    <authors>Extensions.io, Joe Feser</authors>
+    <owners>Extensions.io, Joe Feser</owners>
+    <copyright>Copyright (c) Extensions.io and Joe Feser 2014</copyright>
+    <projectUrl>https://github.com/joefeser/Burrow.Net.AutoRegistration</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <releaseNotes>Initial Release. Little Testing and No Logging.</releaseNotes>
+    <description>Burrow.NET Wrapper using the NServiceBus IHandleMessages&lt;T&gt; Pattern</description>
+    <summary>Windows Azure Service Bus Wrapper modeled after the NServiceBus pattern of IHandleMessages&lt;T&gt;. Includes Autofac IoC container support. 
+    If you use a different IoC container, get ProjectExtensions.Azure.ServiceBus.Core and one of the IoC packages (ProjectExtensions.Azure.ServiceBus.IOC.[container])
+    where container is Autofac, CastleWindsor, StructureMap or Unity. (Debug)</summary>
+    <dependencies>
+      <dependency id="Autofac" version="3.3.0" />
+      <dependency id="Newtonsoft.Json" version="5.0.8" />
+      <dependency id="NLog" version="2.1.0" />
+      <dependency id="WindowsAzure.ServiceBus" version="2.2.0.0" />
+    </dependencies>
+    <tags>ServiceBus Microsoft Azure AppFabric Messaging PubSub Publish Subscribe Queue Topic</tags>
+  </metadata>
+  <files>
+    <file src="BuildOutput\bin\ProjectExtensions.Azure.ServiceBus.dll" target="lib\net40-full" />
+    <file src="BuildOutput\bin\ProjectExtensions.Azure.ServiceBus.pdb" target="lib\net40-full" />
+    <file src="BuildOutput\bin\ProjectExtensions.Azure.ServiceBus.xml" target="lib\net40-full" />
+    <file src="BuildOutput\bin\ProjectExtensions.Azure.ServiceBus.Autofac.dll" target="lib\net40-full" />
+    <file src="BuildOutput\bin\ProjectExtensions.Azure.ServiceBus.Autofac.pdb" target="lib\net40-full" />
+    <file src="BuildOutput\bin\ProjectExtensions.Azure.ServiceBus.Autofac.xml" target="lib\net40-full" />
+    <file src="src\readme.txt" target="" />
+    <file src="BuildOutput\src\*.cs" target="src" />
+    <file src="BuildOutput\src\ProjectExtensions.Azure.ServiceBus\**\*.cs" target="src\ProjectExtensions.Azure.ServiceBus" />
+    <file src="BuildOutput\src\ProjectExtensions.Azure.ServiceBus.Autofac\**\*.cs" target="src\ProjectExtensions.Azure.ServiceBus.Autofac" />
+  </files>
+</package>
